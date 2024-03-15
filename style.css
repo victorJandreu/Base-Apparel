@@ -1,0 +1,214 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
+
+
+:root{
+    --isBefore: hidden ;
+    --colorChange: hsl(0, 36%, 70%);
+    --desatured-red: hsl(0, 36%, 70%);
+    --soft-red: hsl(0, 93%, 68%);
+    --grayihs-red: hsl(0, 6%, 24%);
+    --gradient-pink: 135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%);
+    --gradient-white:  135deg, hsl(0, 0%, 100%), hsl(0, 100%, 98%);
+
+}
+
+
+*{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 8vw 1fr 8vw;
+    background: linear-gradient(var(--gradient-white));
+    font-family: "Josefin Sans", sans-serif;
+    color: var(--desatured-red);
+ 
+}
+
+.mobile{
+    grid-column: 1 / -1;
+    width: 100%;
+}
+
+.desk{
+    display: none;
+}
+
+.logo{
+    grid-column: 2 / 3;
+    margin: 5vw 5vw 5vw 0;
+    max-width: 500px;
+}
+
+
+main{
+    grid-column: 2 / 3;
+    text-align: center;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+h1{
+    font-size: 3.5em;
+    font-weight: 300;
+    line-height: 1.1;
+    text-transform: uppercase;
+    letter-spacing: 10px;
+    margin-bottom: 0;
+    margin-top: 4rem;
+}
+
+span{
+    display: block;
+    color: var(--grayihs-red);
+    font-weight: 600;
+}
+
+p{
+    font-weight: 400;
+    line-height: 1.5;
+    margin-bottom: 2rem;
+}
+
+
+label{
+    width: 80%;
+    padding: 0.8rem 0rem 0.8rem 0.8rem;
+}
+
+button{
+    width: 20%;
+    border-radius: 30px;
+    border: none;
+    background: linear-gradient(var(--gradient-pink));
+    box-shadow: 3px 3px 15px var(--desatured-red);
+    max-width: 80px;
+    position: relative;
+    left: 5px;
+}
+
+
+form{
+    display: flex;
+    justify-content: space-between;
+
+    position: relative;
+   
+    background-color: white;
+    border: 1px solid var(--colorChange);
+   
+    margin-bottom: 3rem;
+    border-radius: 30px;
+   
+}
+
+input{
+    padding: 0.3rem;
+    border: none;
+    font-size: 1em;
+}
+
+input:focus {
+    width: 80%;
+  }
+
+input::placeholder{
+    color: var(--desatured-red);
+}
+
+.correo{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+}
+
+.correo svg{
+   visibility: var(--isBefore);
+}
+
+input{
+    border: none;
+}
+
+
+
+.formulario::after{
+    position: absolute;
+    content: "Please provide a valid email";
+    color: var(--desatured-red);
+    top: calc(100% + 10px);
+   left: 10%;
+   font-size: 1em;
+   visibility: var(--isBefore);
+   
+}
+
+@media (min-width: 800px){
+    body{
+        width: 100%;
+        display: grid;
+        grid-template-columns: 0.3fr 0.5fr 0.1fr 5fr;
+        grid-template-rows: 30px 300px 300px;
+    }
+    
+    .desk{        
+        
+        justify-self: end;
+        display: block;
+        grid-column: 4 / -1;
+         grid-row: 1 / -1;
+        width: 100%;
+        max-width: fit-content;
+        max-height: 100vh;
+    }
+    
+    .logo{
+        grid-column: 2 / 3;
+        margin: 1.6rem 0 0 0;
+        grid-row: 1;
+
+    }
+    
+    
+    main{
+        grid-column: 2/ 3 ;
+        text-align: left;
+        grid-row: 2;
+        margin: 5rem 0 0 0;
+    }
+
+    .mobile{
+        display: none;
+    }
+    
+}
+
+@media (min-width: 900px) {
+
+    body{
+        width: 100%;
+        display: grid;
+        grid-template-columns: 0.5fr 2.3fr 50px 3fr;
+        grid-template-rows: 30px 300px 300px;
+    }
+
+   
+  }
+
+  @media (min-width: 1050px) {
+
+    body{
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1.3fr 2fr 50px 3fr;
+        grid-template-rows: 30px 300px 300px;
+    }
+
+   
+  }
